@@ -1,0 +1,437 @@
+.roboto-fonte {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.inter-fonte {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+
+
+
+
+
+
+
+/* Configurações Globais e Variáveis de Cor */
+:root {
+    --dark-green: #0a3d2c; /* Cor de fundo principal */
+    --light-green: #2ecc71; /* Cor do botão primário */
+    --dark-purple: #1E4D8B; /* Cor dos cards de benefício */
+    --text-color: #ffffff;
+    --text-light: #f0f0f0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+    font-family: Roboto, Inter, sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+
+    /* Cor de fallback */
+    background-color: #0a3d2c; 
+    
+    /* Novo fundo degradê (do azul escuro para o verde escuro) */
+    background-image: linear-gradient(to bottom right, #1E4D8B, #1A9328);
+    
+    /* Garante que o degradê cubra a tela inteira */
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Cabeçalho e Navegação ---  */
+.main-header {
+    padding: 20px 0;
+    border-bottom: 3px solid #1A9328;
+
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+   
+
+.logo img {
+    height: 80px;
+}
+
+.logo-footer img{
+    height: 80px;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-nav li {
+    margin-left: 30px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+/* --- Botões --- */
+.btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: var(--text-color); /* texto dos botões em branco */
+    transition: background-color 0.3s ease;
+}
+
+.btn-login {
+    background-color: #1A9328;
+    color: var(--text-color);
+    margin-right: 15px;
+    font-size: 1.1em;
+    padding: 12px 25px;
+}
+
+.btn-primary {
+    background-color: #1A9328;
+    color: var(--text-color);
+    margin-right: 15px;
+    font-size: 1.1em;
+    padding: 12px 25px;
+}
+
+.btn-secondary {
+    background-color: #1A9328;
+    color: var(--text-color);
+    margin-right: 15px;
+    font-size: 1.1em;
+    padding: 12px 25px;
+}
+
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* --- Seção Hero --- */
+.hero {
+    padding: 60px 0;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1; /* Ocupa metade do espaço */
+}
+
+.hero-text h1 {
+    font-size: 2.5em; /* 40px */
+    line-height: 1.2;
+}
+
+.hero-text p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.hero-image {
+    flex: 1; /* Ocupa a outra metade */
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- Seção Sobre --- */
+.about-project {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.about-project h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.about-project > .container > p {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.features-list li {
+    margin-bottom: 20px;
+}
+
+.features-list h3 {
+    display: inline-block;
+    margin: 0 0 5px 10px;
+}
+
+.features-list p {
+    margin: 0 0 0 25px; /* Alinha com o texto do h3 */
+    color: var(--text-light);
+}
+
+.check-icon {
+    color: var(--light-green);
+    font-weight: bold;
+}
+
+
+/* --- Seção de Impacto (Ícones + Cards) --- */
+.impact-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.impact-section h2 {
+    font-size: 2.2em;
+    margin-bottom: 40px;
+}
+
+.impact-icons {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.icon-group img {
+    /* Evita corte da imagem mantendo proporção
+       - usa largura máxima para manter layout
+       - height: auto preserva a proporção original
+       - object-fit: contain garante que a imagem inteira seja visível
+    */
+    width: 100%;
+    max-width: 350px; /* limita o tamanho sem forçar recorte */
+    height: auto;
+    object-fit: contain;
+    display: block; /* remove pequeno espaçamento em alguns navegadores */
+}
+
+.impact-subtitle {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+}
+
+/* --- Seção de Benefícios (Cartões) --- */
+.benefits-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 50px;
+    text-align: left;
+}
+
+.benefit-card {
+    background-color: var(--dark-purple); /* Cor azul/roxa escura dos cards */
+    padding: 25px;
+    flex: 1; /* Faz com que os 3 cards ocupem o espaço igualmente */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.benefit-card h3 {
+    font-size: 1.25em;
+    color: var(--text-color); /* Títulos dos cards em branco */
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.benefit-card p {
+    color: var(--text-light);
+    font-size: 0.95em;
+}
+
+/* --- Seção Final CTA --- */
+.final-cta-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.final-cta-section h2 {
+    font-size: 2.2em;
+    margin-bottom: 30px;
+}
+
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding-bottom: 40px;
+    align-items: flex-start; /* Alinha o topo das colunas do footer */
+}
+
+
+.footer-column {
+    flex: 1;
+    padding: 0 10px; /* espaço interno entre colunas */
+    text-align: left; /* garante que o texto dentro das colunas fique alinhado à esquerda */
+}
+
+.footer-column.logo-column {
+    flex-basis: 40%; /* Dá mais espaço para a coluna do logo */
+    display: flex; /* coloca logo e texto lado a lado */
+    align-items: center; /* centraliza verticalmente o texto em relação ao logo */
+    gap: 15px;
+}
+
+/* Centraliza o título apenas da coluna de contato (segunda coluna) */
+.footer-container > .footer-column:nth-child(2) h3 {
+    text-align: center;
+}
+
+/* Garante que cada item de contato alinhe o ícone e o texto corretamente */
+.contact-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-container > .footer-column:nth-child(2) {
+    text-align: center;
+}
+
+.footer-container > .footer-column:nth-child(2) .contact-list {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-container > .footer-column:nth-child(2) .contact-list li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+/* Responsividade: empilha colunas em telas pequenas */
+@media (max-width: 720px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: stretch;
+    }
+    .footer-column.logo-column {
+        flex-basis: auto;
+    }
+    .footer-container > .footer-column:nth-child(2) h3 {
+        text-align: left; /* volta a alinhar à esquerda em telas pequenas para consistência */
+    }
+}
+
+.footer-column h3 {
+    font-size: 1.2em;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.footer-logo {
+    height: 80px; /* Ajuste o tamanho do logo do rodapé */
+    margin-bottom: 15px;
+}
+
+.contact-list,
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-list li,
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.contact-list span,
+.footer-links a::before {
+    margin-right: 10px;
+    font-size: 1.1em;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+}
+
+.contact-list a {
+    text-decoration: none;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+}
+
+.contact-list a:hover,
+.footer-links a:hover {
+    color: var(--light-green);
+}
+
+.footer-links a::before {
+    content: '🔗'; /* Ícone de link */
+}
+
+
+/* --- Rodapé --- */
+.main-footer {
+    
+    font-size: 0.9em;
+    padding: 40px 0; 
+    background-color: #101828; /* <-- Cor de fundo escura do footer */
+    border-top: 4px solid #1A9328; /* linha verde superior */
+    color: var(--text-light);
+}
+
+.footer-bottom-bar p {
+    margin: 0;
+}
+
+/* Deixa a barra inferior visualmente separada e com o texto centralizado */
+.footer-bottom-bar {
+    text-align: center;
+    padding: 14px 0;
+    background-color: #000000;
+    color: var(--text-light);
+}

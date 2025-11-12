@@ -34,7 +34,7 @@
                     <p>Cadastre sua família no Censo Autista de Bragança Paulista. Seus dados são fundamentais para o desenvolvimento de políticas públicas que atendam às reais necessidades da comunidade autista.</p>
                     <div class="hero-buttons">
                         <a href="#" class="btn btn-primary">Cadastrar Agora</a>
-                        <a href="#" class="btn btn-secondary">Acessar Sistema</a>
+                        <a href="#" class="btn btn-primary">Acessar Sistema</a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -72,32 +72,30 @@
             <div class="container">
                 <h2>Cada Resposta Conta</h2>
                 
-                <div class="impact-icons">
-                    <div class="icon-group">
-                        <img src="./assets/images/sobre1.svg" alt="">
-                    </div>
-                    <div class="icon-group">
-                        <img src="./assets/images/sobre2.svg" alt="">
-                    </div>
-                    <div class="icon-group">
-                        <img src="./assets/images/sobre3.svg" alt="">
-                    </div>
-                </div>
-                
+                <!-- Unimos as imagens aos blocos -->
                 <p class="impact-subtitle">Seus dados ajudam a construir um panorama real das necessidades da comunidade autista</p>
-                
+
                 <div class="benefits-grid">
-                    <div class="benefit-card">
-                        <h3>Políticas Públicas Direcionadas</h3>
-                        <p>Com dados precisos, gestores públicos podem criar programas e serviços que realmente atendam às necessidades específicas das famílias autistas.</p>
+                    <div class="blocks">
+                        <img src="./assets/images/sobre1.svg" alt="Ilustração polticas" />
+                        <div class="text">
+                            <h3>Políticas Públicas Direcionadas</h3>
+                            <p>Com dados precisos, gestores públicos podem criar programas e serviços que realmente atendam às necessidades específicas das famílias autistas.</p>
+                        </div>
                     </div>
-                    <div class="benefit-card">
-                        <h3>Visibilidade e Recursos</h3>
-                        <p>Demonstrar a dimensão da comunidade autista auxilia na captação de recursos e na priorização de investimentos em educação, saúde e assistência social.</p>
+                    <div class="blocks reverse">
+                        <img src="./assets/images/sobre2.svg" alt="Ilustração visibilidade" />
+                        <div class="text">
+                            <h3>Visibilidade e Recursos</h3>
+                            <p>Demonstrar a dimensão da comunidade autista auxilia na captação de recursos e na priorização de investimentos em educação, saúde e assistência social.</p>
+                        </div>
                     </div>
-                    <div class="benefit-card">
-                        <h3>Fortalecimento da Rede de Apoio</h3>
-                        <p>O censo permite identificar demandas comuns e facilita a criação de grupos de apoio, eventos e iniciativas de conscientização na comunidade.</p>
+                    <div class="blocks">
+                        <img src="./assets/images/sobre3.svg" alt="Ilustração rede de apoio" />
+                        <div class="text">
+                            <h3>Fortalecimento da Rede de Apoio</h3>
+                            <p>O censo permite identificar demandas comuns e facilita a criação de grupos de apoio, eventos e iniciativas de conscientização na comunidade.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -106,7 +104,7 @@
         <section class="final-cta-section">
             <div class="container">
                 <h2>Faça Parte Desta Transformação</h2>
-                <a href="#" class="btn btn-primary">Cadastrar Agora</a>
+                <a href="#" class="btn btn-secondary">Cadastrar Agora</a>
             </div>
         </section>
 
@@ -142,5 +140,20 @@
         </div>
     </footer>
 
-</body>
+    <!-- Script animação ao scroll -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Observa cada bloco individualmente
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.blocks').forEach(el => observer.observe(el));
+    });
+    </script></body>
 </html>
